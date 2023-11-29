@@ -1,19 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router'
 import { ProductDisplay } from '../ProductDisplay/ProductDisplay';
-
-
-
-interface ItemProps {
-  idd: number;
-  image: string;
-  title: string;
-  category: string;
-  brand: string;
-  price: number;
-  description: string;
-  size: string;
-} 
+import ItemProps from '../ItemProps';
 
 
 let all_products=[

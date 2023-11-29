@@ -1,131 +1,53 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import Item from '../Item/item';
-import { BreadCrum } from './BreadCrum';
+import BreadCrum from "./BreadCrum";
+import Data from "../pages/Shop/Data"
+import ItemProps from '../ItemProps';
 
-interface ItemProps {
-  idd: number;
-  image: string;
-  title: string;
-  category: string;
-  brand: string;
-  description: string;
-  size: string;
-}
-let all_products=[
-  {
-    id:1,
-      image: "https://picsum.photos/350",
-      title: "Majica",
-      category: "Muškarci",
-      brand: "mudja",
-      price: 13,
-      description: "afshoiufash",
-      size: "L"
-  },
-  {
-    id:2,
-      image: "https://picsum.photos/350",
-      title: "Majica",
-      category: "Muškarci",
-      brand: "sda",
-      price: 1,
-      description: "fffsaf",
-      size: "M"
-  },
-  {
-    id:3,
-      image: "https://picsum.photos/350",
-      title: "Majica",
-      category: "Deca",
-      brand: "serna",
-      price: 132,
-      description: "faaaaaaa",
-      size: "XL"
-  },
-  {
-    id:4,
-    image: "https://picsum.photos/350",
-    title: "Majica",
-    category: "Žene",
-    brand: "serna",
-    price: 132,
-    description: "faaaaaaa",
-    size: "XL"
-},{
-  id:5,
-  image: "https://picsum.photos/350",
-  title: "Majica",
-  category: "Muškarci",
-  brand: "serna",
-  price: 132,
-  description: "faaaaaaa",
-  size: "XL"
-} ,{
-id:6,
-image: "https://picsum.photos/350",
-title: "Majica",
-category: "Deca",
-brand: "serna",
-price: 132,
-description: "faaaaaaa",
-size: "XL"
-},{
-id:7,
-image: "https://picsum.photos/350",
-title: "Šorc",
-category: "Žene",
-brand: "dasdas",
-price: 132,
-description: "faaaaaaa",
-size: "XL"
-},{
-id:8,
-image: "https://picsum.photos/350",
-title: "Šorc",
-category: "Muškarci",
-brand: "ffasfasgadsvsdvsdvsadvsda",
-price: 132,
-description: "faaaaaaa",
-size: "XL"
-},{
-id:9,
-image: "https://picsum.photos/350",
-title: "Šorc",
-category: "Muškarci",
-brand: "dasdvsdvsdvsdvsdavsdas",
-price: 132,
-description: "faaaaaaa",
-size: "XL"
-}
-]
+import "./ProductDisplay.css"
+
 export const ProductDisplay = () => {
   const {productId}= useParams<string>();
   console.log(typeof(productId))
   
 
 
-  const product= all_products.find((e)=>{return e.id == Number(productId)});
+  const product= Data.find((e)=>{return e.idd == Number(productId)});
 
 
   console.log(product);
   return (
     
-    <div>
-      {product && (
-        <Item
-          key={product.id}
-          image={product.image}
-          title={product.title}
-          brand={product.brand}
-          price={product.price}
-          description={product.description}
-          size={product.size}
-          idd={product.id}
-          category={product.category}
-        />
-      )}
+    <section className="ProductPage">
+      <div className='Up'>
+      <BreadCrum product={product}/>
     </div>
+    <div className='Down'>
+      <div className='LeftSide'>
+        {product && (
+          <img src={product.image} alt={product.title+` Image`} />
+
+        )}
+      </div>
+      <div className="RightSide">
+    {product && (
+      <div> 
+        <h1>{product.title}</h1>
+        <h3>{product.brand}</h3>
+        <div>
+          <h4>{product.category} - {product.group}</h4>
+        </div>
+        <div className='size'><span> Dostupna Veličina:</span><h5> {product.size}</h5></div>
+        
+        <p>{product.description}</p>
+        <div className='buy-button'><button>Dodaj u Korpu</button></div>
+      </div>
+    
+    )}
+    </div>
+</div>
+    </section>
   );
   }
     

@@ -1,6 +1,7 @@
 .item{
     width: 350px;
     margin: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .item .name{
 margin: 6px 0px;
