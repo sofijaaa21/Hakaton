@@ -20,7 +20,7 @@ export const Item: React.FC<ItemProps>= (props)  => {
     <div className="item">
         <Link to={`/product/${props.id}`}><img src={props.image} alt="" /></Link>
         <div className="name-brend"><h2 className='name'>{props.title}</h2>- <h3 className='brend'>{props.brand} </h3></div>
-        <div className='price'><p>{props.price}.00RSD</p></div>
+        <div className='price'><p>{props.category}</p></div>
         <p className='size'>Dostupna Veličina: {props.size}</p>
     </div>
   )

@@ -143,6 +143,17 @@ const findTitleInMenu = (menuItemss:CategoryProps[], titleToCheck: string | unde
 
 
 
+  const findItemBySearch = (ProductList:ItemProps[], titleToCheck: string | undefined):string | null => {
+    for (const Product of ProductList) {
+        if(titleToCheck && Product.title.includes(titleToCheck)){
+          return Product.title;
+        }
+    }
+    return null; 
+  };
+
+
+
 
   export const Shop: React.FC<{ categories:CategoryProps[] }> = (props) => {
     const { categories } = props;
@@ -157,35 +168,44 @@ const findTitleInMenu = (menuItemss:CategoryProps[], titleToCheck: string | unde
     
     const filteredCategory = categories.filter((el: CategoryProps) =>{
       let current_title;
-      if(categoryName && categoryName.charAt(0)=="M"){
+      if(categoryName && categoryName.includes("Muškarci")){
         current_title="Muškarci-"+el.title;
       }
-      if(categoryName && categoryName.charAt(0)=="Ž"){
+      else if(categoryName && categoryName.includes("Žene")){
         current_title="Žene-"+el.title;
       }
-      if(categoryName && categoryName.charAt(0)=="D"){
+      else if(categoryName && categoryName.includes("Deca")){
         current_title="Deca-"+el.title;
       }
-      if(categoryName && categoryName.charAt(0)=="O"){
+      else if(categoryName && categoryName.includes("Oprema")){
         current_title="Oprema-"+el.title;
+      }else {
+        current_title=el.title;
       }
-      
+      console.log(current_title);
       if(current_title === categoryName) return el.title;
       else return null;
 
      ;
     })
-  console.log(filteredCategory)
+  
     
     const selectedTitle = findTitleInMenu(categories, categoryName); 
-  
+    const selectedTitleBySearch= findItemBySearch(products, categoryName)
+    
     
     
 
     const SelectedProducts = products.filter((el: ItemProps) => {
-      console.log(el.category.charAt(0))
+
         return (el.title===selectedTitle &&categoryName&& el.category.charAt(0) ===categoryName.charAt(0));
       });
+
+    const SelectedProductsBySearch = products.filter((el:ItemProps)=>{
+      return( selectedTitleBySearch && el.title.includes(selectedTitleBySearch));
+    })
+
+
     return (
       <div className='shopPage'>
         <h2>Shop Page - {selectedTitle}  </h2> <p>Broj proizvoda: {Elementcount}</p>
@@ -203,7 +223,18 @@ const findTitleInMenu = (menuItemss:CategoryProps[], titleToCheck: string | unde
               description={item.description}
               size={item.size} id={0} category={''}              />
             ))}
-          
+          {SelectedProductsBySearch.map((item)=>(
+            <Item
+            key={item.id}
+            image={item.image}
+            title={item.title}
+            brand={item.brand}
+            price={item.price}
+            description={item.description}
+            size={item.size} id={0} category={''}              />
+
+          ))
+}
         </div>
 
       </div>
