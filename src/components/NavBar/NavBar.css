@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 20vw;
+    gap: 10vw;
     height: 100px;
 }
 .nav-search{
@@ -113,6 +113,22 @@
     
 }
 
+
+.PostButtonDiv button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 125px;
+    height: 32px;
+    border-radius: 75px;
+    
+    background: #ff4141;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
 
 .black_part{
     width: 100%;

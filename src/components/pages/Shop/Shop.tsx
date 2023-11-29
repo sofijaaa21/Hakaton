@@ -4,12 +4,11 @@ import {Item} from "../../Item/item"
 import "./Shop.css"
 
 interface ItemProps {
-    id: number;
+    idd: number;
     image: string;
     title: string;
     category: string;
     brand: string;
-    price: number;
     description: string;
     size: string;
 }
@@ -21,7 +20,7 @@ interface CategoryProps{
 }
 let products=[
     {
-        id:1,
+        idd:1,
         image: "https://picsum.photos/350",
         title: "Majica",
         category: "Muškarci",
@@ -31,7 +30,7 @@ let products=[
         size: "L"
     },
     {
-      id:2,
+      idd:2,
         image: "https://picsum.photos/350",
         title: "Majica",
         category: "Muškarci",
@@ -41,7 +40,7 @@ let products=[
         size: "M"
     },
     {
-      id:3,
+      idd:3,
         image: "https://picsum.photos/350",
         title: "Majica",
         category: "Deca",
@@ -51,7 +50,7 @@ let products=[
         size: "XL"
     },
     {
-      id:4,
+      idd:4,
       image: "https://picsum.photos/350",
       title: "Majica",
       category: "Žene",
@@ -60,7 +59,7 @@ let products=[
       description: "faaaaaaa",
       size: "XL"
   },{
-    id:5,
+    idd:5,
     image: "https://picsum.photos/350",
     title: "Majica",
     category: "Muškarci",
@@ -69,7 +68,7 @@ let products=[
     description: "faaaaaaa",
     size: "XL"
 } ,{
-  id:6,
+  idd:6,
   image: "https://picsum.photos/350",
   title: "Majica",
   category: "Deca",
@@ -78,7 +77,7 @@ let products=[
   description: "faaaaaaa",
   size: "XL"
 },{
-  id:7,
+  idd:7,
   image: "https://picsum.photos/350",
   title: "Šorc",
   category: "Žene",
@@ -87,7 +86,7 @@ let products=[
   description: "faaaaaaa",
   size: "XL"
 },{
-  id:8,
+  idd:8,
   image: "https://picsum.photos/350",
   title: "Šorc",
   category: "Muškarci",
@@ -96,7 +95,7 @@ let products=[
   description: "faaaaaaa",
   size: "XL"
 },{
-  id:9,
+  idd:9,
   image: "https://picsum.photos/350",
   title: "Šorc",
   category: "Muškarci",
@@ -215,23 +214,27 @@ const findTitleInMenu = (menuItemss:CategoryProps[], titleToCheck: string | unde
           {  SelectedProducts.map((item) => (
             
               <Item
-              key={item.id}
+              key={item.idd}
               image={item.image}
               title={item.title}
               brand={item.brand}
               price={item.price}
               description={item.description}
-              size={item.size} id={0} category={''}              />
+              size={item.size} 
+              idd={item.idd}
+              category={item.category}              />
             ))}
           {SelectedProductsBySearch.map((item)=>(
             <Item
-            key={item.id}
+            key={item.idd}
             image={item.image}
             title={item.title}
             brand={item.brand}
             price={item.price}
             description={item.description}
-            size={item.size} id={0} category={''}              />
+            size={item.size}
+            idd={item.idd} 
+            category={item.category}          />
 
           ))
 }

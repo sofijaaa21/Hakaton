@@ -5,7 +5,7 @@ import { ProductDisplay } from '../ProductDisplay/ProductDisplay';
 
 
 interface ItemProps {
-  id: number;
+  idd: number;
   image: string;
   title: string;
   category: string;
@@ -13,7 +13,8 @@ interface ItemProps {
   price: number;
   description: string;
   size: string;
-}
+} 
+
 
 let all_products=[
   {
@@ -107,12 +108,13 @@ size: "XL"
 
 export const Product = () => {
     const {productId} =useParams();
-    const product= all_products.find((e)=> e.id.toString() === productId)
-//<ProductDisplay product={product}/>
+    const product= all_products.find((e)=> e.id.toString() === productId);
+    console.log(typeof(product))
+    ////<ProductDisplay product={product} />
   return (
-    <div>
-      
-
+  
+<div>
+    2
     </div>
   )
 }

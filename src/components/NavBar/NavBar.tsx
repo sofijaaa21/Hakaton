@@ -42,6 +42,8 @@ export const NavBar=()=>{
                     <div className="prijava"><Link to={"/login"}>Login</Link></div>
                     <Link to={"/cart"}><img width="32" height="32" src="https://img.icons8.com/material-outlined/24/shopping-cart--v1.png" alt="shopping-cart--v1"/></Link>
                     <div className="nav-cart-count">0</div>
+
+                    <Link to={"/MakePost"}><div className="PostButtonDiv"><button >Postavi Oglas</button></div></Link>
                 </div>
             </div>
             <div className="lower">

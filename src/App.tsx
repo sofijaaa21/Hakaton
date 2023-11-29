@@ -10,6 +10,8 @@ import LoginSignUp from './components/pages/LoginSignUp';
 import navLinksData from './components/NavBar/MenuItemsData.json';
 import { Footer } from './components/Footer/Footer';
 import MainPage from './components/pages/MainPage';
+import ProductDisplay from './components/ProductDisplay/ProductDisplay';
+import { MakePost } from './components/pages/MakePost/MakePost';
 
 function App() {
   return (
@@ -19,9 +21,9 @@ function App() {
         <Route path="/" element={< MainPage/>} />
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/signUp" element={<LandingPage />} />
-        <Route path="/product" element={<Product />}>
-          <Route path=":productId" element={<Product />} />
-        </Route>
+        <Route path="/ProductDisplay/:productId" element={<ProductDisplay />} />
+        <Route path="/MakePost" element={<MakePost  categories={navLinksData} />} />
+
         <Route path="/cart" element={<Cart />} />
         <Route path="/men" element={<MainPage />} />
         <Route path="/women" element={<MainPage />} />
