@@ -1,0 +1,10 @@
+.ItemField{
+    width: 1400 !important; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shopPage{
+    min-height: 631px;
+}

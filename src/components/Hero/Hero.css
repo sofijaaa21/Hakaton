@@ -10,16 +10,17 @@
     justify-content: center;
     gap: 20px;
     padding: 180px;
+    padding-top: 100px;
     line-height: 1.1;
 }
 .hero-left h2{
-    color: #090909;
+    color: #1b263b;
     font-size: 36px;
     font-weight: 600;
 
 }
 .hero-left p{
-    color: #171717;
+    color: #1b263b;
     font-size: 80px;
     font-weight: 700;
 }

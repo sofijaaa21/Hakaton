@@ -1,18 +1,7 @@
-.footer-copyright-content{
-    width: 100%;
-    height: 50px;
-    background-color: rgb(34, 34, 34);
-    color: rgb(228, 227, 227);
-    font-size: 29px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .footer-feedback{
     height: 210px;
-    background-color: rgb(66, 66, 255);
+    background-color: #1b263b;
     color:rgb(228, 227, 227); 
     display: flex;
     justify-content: center;
@@ -46,3 +35,16 @@
     width: 80px;
     height: 30px;
 }
+
+.footer-copyright-content{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(228, 227, 227);
+    font-size: 19px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

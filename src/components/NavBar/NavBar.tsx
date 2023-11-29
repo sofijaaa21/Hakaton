@@ -3,12 +3,11 @@ import {Link, useNavigate} from "react-router-dom"
 import { useState } from "react";
 import "./NavBar.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import {NavigationDesktop} from "./MultiLevelDropDownMenu"
+import navLinksData from "./MenuItemsData.json"
 export const NavBar=()=>{
     const navigate = useNavigate();
-    function duotone(arg0: string) {
-        throw new Error("Function not implemented.");
-    }
+    
 
     //const[counter, setCounter]=useState(0);
     //const incress= ()=>{
@@ -16,7 +15,7 @@ export const NavBar=()=>{
     //}
     
     return(
-    <div>
+    <nav>
         <div className="nav">
             <div className="upper">
                 <div className="nav-logo" onClick={()=>{
@@ -35,16 +34,19 @@ export const NavBar=()=>{
 
                 <div className="nav-login-cart">
                     <div className="prijava"><Link to={"/login"}>Login</Link></div>
-                    <Link to={"/cart"}><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/shopping-cart--v1.png" alt="shopping-cart--v1"/></Link>
+                    <Link to={"/cart"}><img width="32" height="32" src="https://img.icons8.com/material-outlined/24/shopping-cart--v1.png" alt="shopping-cart--v1"/></Link>
                     <div className="nav-cart-count">0</div>
                 </div>
             </div>
             <div className="lower">
                 <ul className="nav-menu">
-                    <li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>Prodavnica</Link> </li>
+        
+
+                    <NavigationDesktop navLinksData={navLinksData} />
+                    {/*<li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>Prodavnica</Link> </li>
                     <li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>O nama</Link></li>
                     <li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>Kontakt</Link></li>
-                    <li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>Informacije</Link></li>
+            <li onClick={()=>{}}><Link style={{textDecoration: 'none'}} to={"/"}>Informacije</Link></li>*/}
                 </ul>
             </div>
             
@@ -52,7 +54,7 @@ export const NavBar=()=>{
         <div className="black_part">
             
         </div>
-    </div>
+    </nav>
     
     );
 }

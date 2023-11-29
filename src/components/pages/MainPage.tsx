@@ -2,10 +2,10 @@ import React from 'react'
 import { Hero } from '../Hero/Hero'
 import { Footer } from '../Footer/Footer';
 
-export const Shop = () => {
+export const MainPage = () => {
   return (
-    <><Hero /><Footer /></>
+    <Hero />
   )
 }
 
-export default Shop;
+export default MainPage;

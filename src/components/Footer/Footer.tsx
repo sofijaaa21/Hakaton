@@ -2,7 +2,7 @@ import React from 'react'
 import "./Footer.css"
 export const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
         <div className="footer-feedback">
             <div className="footer-feedback__text">
                 <h2>Saznajte prvi</h2>
@@ -19,6 +19,6 @@ export const Footer = () => {
         <div className="footer-copyright-content">
             ThriftShop © 2023
         </div>
-    </div>
+    </footer>
   )
 }
