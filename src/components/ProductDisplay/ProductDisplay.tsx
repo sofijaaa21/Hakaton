@@ -9,7 +9,6 @@ interface ItemProps {
   title: string;
   category: string;
   brand: string;
-  price: number;
   description: string;
   size: string;
 }
